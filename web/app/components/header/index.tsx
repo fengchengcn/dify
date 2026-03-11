@@ -17,7 +17,7 @@ import EnvNav from './env-nav'
 import ExploreNav from './explore-nav'
 import LicenseNav from './license-env'
 import PlanBadge from './plan-badge'
-import PluginsNav from './plugins-nav'
+// import PluginsNav from './plugins-nav'
 import ToolsNav from './tools-nav'
 
 const navClassName = `
@@ -72,9 +72,9 @@ const Header = () => {
             {enableBilling ? <PlanBadge allowHover sandboxAsUpgrade plan={plan.type} onClick={handlePlanClick} /> : <LicenseNav />}
           </div>
           <div className="flex items-center">
-            <div className="mr-2">
+            {/* <div className="mr-2">
               <PluginsNav />
-            </div>
+            </div> */}
             <AccountDropdown />
           </div>
         </div>
@@ -106,9 +106,9 @@ const Header = () => {
       </div>
       <div className="flex min-w-0 flex-[1] items-center justify-end pl-2 pr-3 min-[1280px]:pl-3">
         <EnvNav />
-        <div className="mr-2">
+        {/* <div className="mr-2">
           <PluginsNav />
-        </div>
+        </div> */}
         <AccountDropdown />
       </div>
     </div>
