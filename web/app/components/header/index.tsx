@@ -13,7 +13,6 @@ import useBreakpoints, { MediaType } from '@/hooks/use-breakpoints'
 import { Plan } from '../billing/type'
 import AccountDropdown from './account-dropdown'
 import AppNav from './app-nav'
-import DatasetNav from './dataset-nav'
 import EnvNav from './env-nav'
 import ExploreNav from './explore-nav'
 import LicenseNav from './license-env'
@@ -28,7 +27,7 @@ const navClassName = `
 `
 
 const Header = () => {
-  const { isCurrentWorkspaceEditor, isCurrentWorkspaceDatasetOperator } = useAppContext()
+  const { isCurrentWorkspaceDatasetOperator } = useAppContext()
   const media = useBreakpoints()
   const isMobile = media === MediaType.mobile
   const { enableBilling, plan } = useProviderContext()
@@ -82,7 +81,7 @@ const Header = () => {
         <div className="my-1 flex items-center justify-center space-x-1">
           {!isCurrentWorkspaceDatasetOperator && <ExploreNav className={navClassName} />}
           {!isCurrentWorkspaceDatasetOperator && <AppNav />}
-          {(isCurrentWorkspaceEditor || isCurrentWorkspaceDatasetOperator) && <DatasetNav />}
+          {/* {(isCurrentWorkspaceEditor || isCurrentWorkspaceDatasetOperator) && <DatasetNav />} */}
           {!isCurrentWorkspaceDatasetOperator && <ToolsNav className={navClassName} />}
         </div>
       </div>
@@ -91,7 +90,7 @@ const Header = () => {
 
   return (
     <div className="flex h-[56px] items-center">
-      <div className="flex min-w-0 flex-[1]  items-center pl-3 pr-2 min-[1280px]:pr-3">
+      <div className="flex min-w-0 flex-[1] items-center pl-3 pr-2 min-[1280px]:pr-3">
         {renderLogo()}
         <div className="mx-1.5 shrink-0 font-light text-divider-deep">/</div>
         <WorkspaceProvider>
@@ -102,7 +101,7 @@ const Header = () => {
       <div className="flex items-center space-x-2">
         {!isCurrentWorkspaceDatasetOperator && <ExploreNav className={navClassName} />}
         {!isCurrentWorkspaceDatasetOperator && <AppNav />}
-        {(isCurrentWorkspaceEditor || isCurrentWorkspaceDatasetOperator) && <DatasetNav />}
+        {/* {(isCurrentWorkspaceEditor || isCurrentWorkspaceDatasetOperator) && <DatasetNav />} */}
         {!isCurrentWorkspaceDatasetOperator && <ToolsNav className={navClassName} />}
       </div>
       <div className="flex min-w-0 flex-[1] items-center justify-end pl-2 pr-3 min-[1280px]:pl-3">
