@@ -1,29 +1,25 @@
-import type { useMarketplace } from './hooks'
-import { useLocale } from '#i18n'
-import {
-  RiArrowRightUpLine,
-  RiArrowUpDoubleLine,
-} from '@remixicon/react'
-import { useTheme } from 'next-themes'
-import { useTranslation } from 'react-i18next'
-import Loading from '@/app/components/base/loading'
-import List from '@/app/components/plugins/marketplace/list'
-import { getMarketplaceUrl } from '@/utils/var'
+// import type { useMarketplace } from './hooks'
+// import { useLocale } from '#i18n'
+// import {
+//   RiArrowRightUpLine,
+//   RiArrowUpDoubleLine,
+// } from '@remixicon/react'
+// import { useTheme } from 'next-themes'
+// import { useTranslation } from 'react-i18next'
+// import Loading from '@/app/components/base/loading'
+// import List from '@/app/components/plugins/marketplace/list'
+// import { getMarketplaceUrl } from '@/utils/var'
 
-type MarketplaceProps = {
-  searchPluginText: string
-  filterPluginTags: string[]
-  isMarketplaceArrowVisible: boolean
-  showMarketplacePanel: () => void
-  marketplaceContext: ReturnType<typeof useMarketplace>
-}
-const Marketplace = ({
-  searchPluginText,
-  filterPluginTags,
-  isMarketplaceArrowVisible,
-  showMarketplacePanel,
-  marketplaceContext,
-}: MarketplaceProps) => {
+// type MarketplaceProps = {
+//   searchPluginText: string
+//   filterPluginTags: string[]
+//   isMarketplaceArrowVisible: boolean
+//   showMarketplacePanel: () => void
+//   marketplaceContext: ReturnType<typeof useMarketplace>
+// }
+const Marketplace = () => {
+  return null
+  /*
   const locale = useLocale()
   const { t } = useTranslation()
   const { theme } = useTheme()
@@ -98,18 +94,31 @@ const Marketplace = ({
           )
         }
         {
-          (!isLoading || page > 1) && (
+          !isLoading && marketplaceCollections.map(collection => (
             <List
-              marketplaceCollections={marketplaceCollections || []}
-              marketplaceCollectionPluginsMap={marketplaceCollectionPluginsMap || {}}
+              key={collection.category}
+              category={collection.category}
+              plugins={marketplaceCollectionPluginsMap[collection.category]}
+              searchPluginText={searchPluginText}
+              filterPluginTags={filterPluginTags}
+            />
+          ))
+        }
+        {
+          !isLoading && (
+            <List
+              key="all"
+              category="all"
               plugins={plugins}
-              showInstallButton
+              searchPluginText={searchPluginText}
+              filterPluginTags={filterPluginTags}
             />
           )
         }
       </div>
     </>
   )
+  */
 }
 
 export default Marketplace
