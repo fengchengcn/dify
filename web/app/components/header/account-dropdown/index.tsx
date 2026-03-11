@@ -10,22 +10,22 @@ import { Avatar } from '@/app/components/base/avatar'
 import PremiumBadge from '@/app/components/base/premium-badge'
 import ThemeSwitcher from '@/app/components/base/theme-switcher'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLinkItem, DropdownMenuSeparator, DropdownMenuTrigger } from '@/app/components/base/ui/dropdown-menu'
-import { ACCOUNT_SETTING_TAB } from '@/app/components/header/account-setting/constants'
-import { IS_CLOUD_EDITION } from '@/config'
+// import { ACCOUNT_SETTING_TAB } from '@/app/components/header/account-setting/constants'
+// import { IS_CLOUD_EDITION } from '@/config'
 import { useAppContext } from '@/context/app-context'
-import { useGlobalPublicStore } from '@/context/global-public-context'
-import { useDocLink } from '@/context/i18n'
-import { useModalContext } from '@/context/modal-context'
+// import { useGlobalPublicStore } from '@/context/global-public-context'
+// import { useDocLink } from '@/context/i18n'
+// import { useModalContext } from '@/context/modal-context'
 import { useProviderContext } from '@/context/provider-context'
-import { env } from '@/env'
+// import { env } from '@/env'
 import { useLogout } from '@/service/use-common'
 import { cn } from '@/utils/classnames'
 import AccountAbout from '../account-about'
-import GithubStar from '../github-star'
-import Indicator from '../indicator'
-import Compliance from './compliance'
+// import GithubStar from '../github-star'
+// import Indicator from '../indicator'
+// import Compliance from './compliance'
 import { ExternalLinkIndicator, MenuItemContent } from './menu-item-content'
-import Support from './support'
+// import Support from './support'
 
 type AccountMenuRouteItemProps = {
   href: string
@@ -50,30 +50,30 @@ function AccountMenuRouteItem({
   )
 }
 
-type AccountMenuExternalItemProps = {
-  href: string
-  iconClassName: string
-  label: ReactNode
-  trailing?: ReactNode
-}
+// type AccountMenuExternalItemProps = {
+//   href: string
+//   iconClassName: string
+//   label: ReactNode
+//   trailing?: ReactNode
+// }
 
-function AccountMenuExternalItem({
-  href,
-  iconClassName,
-  label,
-  trailing,
-}: AccountMenuExternalItemProps) {
-  return (
-    <DropdownMenuLinkItem
-      className="justify-between"
-      href={href}
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      <MenuItemContent iconClassName={iconClassName} label={label} trailing={trailing} />
-    </DropdownMenuLinkItem>
-  )
-}
+// function AccountMenuExternalItem({
+//   href,
+//   iconClassName,
+//   label,
+//   trailing,
+// }: AccountMenuExternalItemProps) {
+//   return (
+//     <DropdownMenuLinkItem
+//       className="justify-between"
+//       href={href}
+//       rel="noopener noreferrer"
+//       target="_blank"
+//     >
+//       <MenuItemContent iconClassName={iconClassName} label={label} trailing={trailing} />
+//     </DropdownMenuLinkItem>
+//   )
+// }
 
 type AccountMenuActionItemProps = {
   iconClassName: string
@@ -110,13 +110,13 @@ export default function AppSelector() {
   const router = useRouter()
   const [aboutVisible, setAboutVisible] = useState(false)
   const [isAccountMenuOpen, setIsAccountMenuOpen] = useState(false)
-  const { systemFeatures } = useGlobalPublicStore()
+  // const { systemFeatures } = useGlobalPublicStore()
 
   const { t } = useTranslation()
-  const docLink = useDocLink()
-  const { userProfile, langGeniusVersionInfo, isCurrentWorkspaceOwner } = useAppContext()
+  // const docLink = useDocLink()
+  const { userProfile, langGeniusVersionInfo } = useAppContext()
   const { isEducationAccount } = useProviderContext()
-  const { setShowAccountSettingModal } = useModalContext()
+  // const { setShowAccountSettingModal } = useModalContext()
 
   const { mutateAsync: logout } = useLogout()
   const handleLogout = async () => {
@@ -168,14 +168,14 @@ export default function AppSelector() {
               label={t('account.account', { ns: 'common' })}
               trailing={<ExternalLinkIndicator />}
             />
-            <AccountMenuActionItem
+            {/* <AccountMenuActionItem
               iconClassName="i-ri-settings-3-line"
               label={t('userProfile.settings', { ns: 'common' })}
               onClick={() => setShowAccountSettingModal({ payload: ACCOUNT_SETTING_TAB.MEMBERS })}
-            />
+            /> */}
           </DropdownMenuGroup>
-          <DropdownMenuSeparator className="!my-0 bg-divider-subtle" />
-          {!systemFeatures.branding.enabled && (
+          {/* <DropdownMenuSeparator className="!my-0 bg-divider-subtle" /> */}
+          {/* {!systemFeatures.branding.enabled && (
             <>
               <AccountMenuSection>
                 <AccountMenuExternalItem
@@ -227,7 +227,7 @@ export default function AppSelector() {
               </AccountMenuSection>
               <DropdownMenuSeparator className="!my-0 bg-divider-subtle" />
             </>
-          )}
+          )} */}
           <AccountMenuSection>
             <DropdownMenuItem
               closeOnClick={false}
