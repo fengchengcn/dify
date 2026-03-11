@@ -1,32 +1,34 @@
-import { RiDiscordFill, RiDiscussLine, RiGithubFill } from '@remixicon/react'
-import Link from 'next/link'
+// import { RiDiscordFill, RiDiscussLine, RiGithubFill } from '@remixicon/react'
+// import Link from 'next/link'
 import * as React from 'react'
-import { useTranslation } from 'react-i18next'
+// import { useTranslation } from 'react-i18next'
 
-type CustomLinkProps = {
-  href: string
-  children: React.ReactNode
-}
+// type CustomLinkProps = {
+//   href: string
+//   children: React.ReactNode
+// }
 
-const CustomLink = React.memo(({
-  href,
-  children,
-}: CustomLinkProps) => {
-  return (
-    <Link
-      className="flex h-8 w-8 cursor-pointer items-center justify-center transition-opacity duration-200 ease-in-out hover:opacity-80"
-      target="_blank"
-      rel="noopener noreferrer"
-      href={href}
-    >
-      {children}
-    </Link>
-  )
-})
+// const CustomLink = React.memo(({
+//   href,
+//   children,
+// }: CustomLinkProps) => {
+//   return (
+//     <Link
+//       className="flex h-8 w-8 cursor-pointer items-center justify-center transition-opacity duration-200 ease-in-out hover:opacity-80"
+//       target="_blank"
+//       rel="noopener noreferrer"
+//       href={href}
+//     >
+//       {children}
+//     </Link>
+//   )
+// })
 
 const Footer = () => {
-  const { t } = useTranslation()
+  // const { t } = useTranslation()
 
+  return null
+  /*
   return (
     <footer className="relative shrink-0 grow-0 px-12 py-2">
       <h3 className="text-gradient text-xl font-semibold leading-tight">{t('join', { ns: 'app' })}</h3>
@@ -44,6 +46,7 @@ const Footer = () => {
       </div>
     </footer>
   )
+  */
 }
 
 export default React.memo(Footer)
