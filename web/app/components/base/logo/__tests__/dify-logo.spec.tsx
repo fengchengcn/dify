@@ -28,34 +28,34 @@ describe('DifyLogo', () => {
   describe('Render', () => {
     it('renders correctly with default props', () => {
       render(<DifyLogo />)
-      const img = screen.getByRole('img', { name: /dify logo/i })
+      const img = screen.getByRole('img', { name: /morgen logo/i })
       expect(img).toBeInTheDocument()
-      expect(img).toHaveAttribute('src', '/test-base-path/logo/logo.svg')
+      expect(img).toHaveAttribute('src', '/test-base-path/logo/morgen8.png')
     })
   })
 
   describe('Props', () => {
     it('applies custom size correctly', () => {
       const { rerender } = render(<DifyLogo size="large" />)
-      let img = screen.getByRole('img', { name: /dify logo/i })
-      expect(img).toHaveClass('w-16')
-      expect(img).toHaveClass('h-7')
+      let img = screen.getByRole('img', { name: /morgen logo/i })
+      expect(img).toHaveClass('w-auto')
+      expect(img).toHaveClass('h-10')
 
       rerender(<DifyLogo size="small" />)
-      img = screen.getByRole('img', { name: /dify logo/i })
-      expect(img).toHaveClass('w-9')
-      expect(img).toHaveClass('h-4')
+      img = screen.getByRole('img', { name: /morgen logo/i })
+      expect(img).toHaveClass('w-auto')
+      expect(img).toHaveClass('h-5')
     })
 
     it('applies custom style correctly', () => {
       render(<DifyLogo style="monochromeWhite" />)
-      const img = screen.getByRole('img', { name: /dify logo/i })
-      expect(img).toHaveAttribute('src', '/test-base-path/logo/logo-monochrome-white.svg')
+      const img = screen.getByRole('img', { name: /morgen logo/i })
+      expect(img).toHaveAttribute('src', '/test-base-path/logo/morgen8.png')
     })
 
     it('applies custom className', () => {
       render(<DifyLogo className="custom-test-class" />)
-      const img = screen.getByRole('img', { name: /dify logo/i })
+      const img = screen.getByRole('img', { name: /morgen logo/i })
       expect(img).toHaveClass('custom-test-class')
     })
   })
@@ -67,8 +67,8 @@ describe('DifyLogo', () => {
         theme: Theme.dark,
       } as ReturnType<typeof useTheme>)
       render(<DifyLogo style="default" />)
-      const img = screen.getByRole('img', { name: /dify logo/i })
-      expect(img).toHaveAttribute('src', '/test-base-path/logo/logo-monochrome-white.svg')
+      const img = screen.getByRole('img', { name: /morgen logo/i })
+      expect(img).toHaveAttribute('src', '/test-base-path/logo/morgen8.png')
     })
 
     it('uses monochromeWhite logo in dark theme when style is monochromeWhite', () => {
@@ -77,8 +77,8 @@ describe('DifyLogo', () => {
         theme: Theme.dark,
       } as ReturnType<typeof useTheme>)
       render(<DifyLogo style="monochromeWhite" />)
-      const img = screen.getByRole('img', { name: /dify logo/i })
-      expect(img).toHaveAttribute('src', '/test-base-path/logo/logo-monochrome-white.svg')
+      const img = screen.getByRole('img', { name: /morgen logo/i })
+      expect(img).toHaveAttribute('src', '/test-base-path/logo/morgen8.png')
     })
 
     it('uses default logo in light theme when style is default', () => {
@@ -87,8 +87,8 @@ describe('DifyLogo', () => {
         theme: Theme.light,
       } as ReturnType<typeof useTheme>)
       render(<DifyLogo style="default" />)
-      const img = screen.getByRole('img', { name: /dify logo/i })
-      expect(img).toHaveAttribute('src', '/test-base-path/logo/logo.svg')
+      const img = screen.getByRole('img', { name: /morgen logo/i })
+      expect(img).toHaveAttribute('src', '/test-base-path/logo/morgen8.png')
     })
   })
 })
