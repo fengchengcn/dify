@@ -37,6 +37,21 @@ const nextConfig: NextConfig = {
     // https://nextjs.org/docs/api-reference/next.config.js/ignoring-typescript-errors
     ignoreBuildErrors: true,
   },
+  async rewrites() {
+    if (!isDev) {
+      return []
+    }
+    return [
+      {
+        source: '/console/api/:path*',
+        destination: 'http://119.45.30.10/console/api/:path*',
+      },
+      {
+        source: '/api/:path*',
+        destination: 'http://119.45.30.10/api/:path*',
+      },
+    ]
+  },
   async redirects() {
     return [
       {
